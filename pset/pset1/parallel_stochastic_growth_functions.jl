@@ -3,8 +3,6 @@
 # @everywhere using Parameters, SharedArrays
 
 ### Our goal: parallelize computing
-### Add @everywhere to functions
-### Add @distributed to the "tasks"
 
 @everywhere @with_kw struct Primitives
     ####
@@ -59,12 +57,7 @@ function Bellman(prim::Primitives,res::Results)
     #### How? Use @distributed
 
     ########### Task: add stochastic technology shocks
-    #### how: we should loop over technology states here
-    #### 1. add technology states to Primitives
-    #### 2. loop over technology states here
-    #### 3. modify budget constraint to include technology shocks
-    #### 4. modify value function to include expectation over future technology shocks
-    #### 5. modify Initialize function to initialize technology states
+    
     @sync @distributed for z_index in 1:nZ
         Z = Z_grid[z_index] #loop over technology states
         @sync @distributed for k_index in 1:nk
