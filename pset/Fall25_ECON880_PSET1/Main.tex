@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+
+\usepackage{preamble}
+\usepackage{xgames}
+\usepackage{fikz}
+\addbibresource{references.bib}
+
+\graphicspath{{../figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{amsfonts, amsmath}
+\usepackage{amssymb, geometry}
+\usepackage{commath}
+\usepackage{comment}
+\usepackage{scalefnt}
+\usepackage{setspace}
+\usepackage{color,hyperref}
+%\usepackage{epsfig,subfigure,morefloats}
+\usepackage{dsfont}
+\usepackage{epstopdf}
+%\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs,siunitx}
+\usepackage{bm}
+\usepackage[section]{placeins}
+%\usepackage{hypcap}
+\usepackage{afterpage}
+\usepackage[makeroom]{cancel}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{subcaption} 
+\usepackage[toc,page]{appendix}
+\usepackage{tocloft}
+\usepackage{mathtools}
+
+
+\usepackage{mathpazo} % math & rm
+\linespread{1.15}        % Palatino needs more leading (space between lines)
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % tt
+\normalfont
+\usepackage[T1]{fontenc}
+\setcounter{tocdepth}{4}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\J}{\mathcal{J}}
+\newcommand{\thetahat}{\hat{\theta}}
+\newcommand{\Qhat}{\hat{\mathbb{Q}}}
+\newcommand{\logn}{\ell n}
+\newcommand{\iid}{\stackrel{\mathclap{iid}}{\sim}}
+\newcommand{\notimplies}{%
+\mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
+\newcommand{\WTS}{\colorbox{lightblue!20}{\textbf{WTS.}} }
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Var}{\mathrm{Var}}
+
+
+%\usepackage{bookman}
+%\usepackage{palatino}
+\usepackage{lmodern}
+%\usepackage{pifont}
+% \usepackage{pxfonts}
+%\usepackage{tgpagella}
+%\usepackage{utfsym}
+
+% % For underlining with line breaks
+% \usepackage{soul} 
+
+% % All fonts: https://tug.org/FontCatalogue/
+% \usepackage{kpfonts} % More professional font
+% % \usepackage[default]{sourcecodepro} % Code-like font
+% \usepackage[T1]{fontenc}
+
+% Control hyperlinks and colors
+% CUSTOM COLORS INCLUDED DIRECTLY AFTER \begin{document}
+
+% \usepackage{hyperref}
+% \hypersetup{
+%     colorlinks = true,        % Enable colored links
+%     breaklinks = true,        % Allow links to break across lines
+%     linkbordercolor = {0 0 0},
+%     pdfborderstyle = {/S/U/W 1},
+%     linkcolor = cornflowerblue,    % Color of internal links
+%     % urlcolor = cornflowerblue,     % Color of URL links
+%     % urlcolor = firebrick,
+%     % urlcolor = darkslategrey,
+%     % urlcolor = mediumslateblue,
+%     % urlcolor = marineblue2,
+%     % urlcolor = darkersapphireblue,
+%     urlcolor = darkerbadgerred,
+%     anchorcolor = cornflowerblue,  % Color of anchors
+%     citecolor = cornflowerblue,    % Color of citations
+%     % pdftitle = {Fall25_ECON880_PSET1},    % Title of the PDF
+%     pdfauthor = {Eric Hsienchen Chu}, % Author of the PDF
+%     bookmarksopen = true,      % Open bookmarks panel at start
+%     %pdfnewwindow=true,
+% }
+
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\crossmark}{\usym{2717}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+
+\usepackage[bottom]{footmisc} % Ensures footnotes appear at the bottom of the page
+
+\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\huge Fall25 ECON880 PSET1}
+\author{\Large Eric Hsienchen Chu\footnote{Department of Finance, Wisconsin School of Business. 
+\href{mailto:hchu38@wisc.edu}{hchu38@wisc.edu}. 
+This is PSET for ECON 880: Computational Methods in Fall 2025. 
+Instructors: Prof. Dean Corbae and Prof. Rasmus Lentz.}}
+
+\begin{document}
+\date{\Large Due: September 8, 2025}
+\maketitle
+\renewcommand{\cftdot}{.}
+
+%\listoftodos[Appendix]
+%\improvement[inline]{Todo.}
+% ------ Section 1 ------%
+%\par \noindent ($\circledast$) I compile this set of notes to prepare for Fall 2024 FINANCE 920: Theory of Finance by Prof. Hengjie Ai. The recommended prerequisites are first-year PhD Micro \& Macro sequences, with tools of dynamic programming, continuous time methods, and numerical methods. This reading notes mainly reviews \citet{KerryBack-sn} and classnotes from Prof. Ai. 
+
+%\tableofcontents
+\vspace{-4ex}
+%\newpage
+
+% ------ Section 1 ------%
+\section{\textsc{DP in an Infinite Horizon}}
+%\input{Section1}
+%\newpage
+\input{Section1hw}
+
+%\newpage
+% ------ Section 2 ------%
+%\section{\textsc{Building Block I: Recursive Competitive Equilibrium}}
+%\input{Section2}
+
+%\newpage
+% ------ Section 3 ------%
+
+
+% ------ Section 4 ------%
+%\newpage
+%\section{\textsc{Qualifications and Extensions}}
+%\input{Section4}
+
+
+% ------ Section 5 ------%
+%\section{\textsc{Research Agenda}}
+%\input{Section5}
+
+
+% ------ Section 6 ------%
+%\section{\textsc{Replication Notes}}
+%\input{Section6}
+
+
+% ------ Section 7 ------%
+%\newpage
+%\section{\textsc{Literature Review}}
+%\input{Section7}
+
+%\newpage
+%\vspace{-2ex}
+%\printbibliography
+%\newpage
+% ------ Appendix I ------%
+%\section{\textsc{Appendix I: Review}}
+%\input{SectionA1}
+
+% ------ Appendix II ------%
+%\section{\textsc{Appendix II: Equilibrium with Complete Markets}}
+%\input{SectionA3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+%\vspace{-2ex}
+%\printbibliography
+
+
+
+\end{document}
