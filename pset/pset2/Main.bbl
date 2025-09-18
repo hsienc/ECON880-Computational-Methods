@@ -1,0 +1,65 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Huggett1993-sn}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bf92eb7565da8011a5bdd496b20c5396}{%
+           family={Huggett},
+           familyi={H\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bf92eb7565da8011a5bdd496b20c5396}
+      \strng{fullhash}{bf92eb7565da8011a5bdd496b20c5396}
+      \strng{bibnamehash}{bf92eb7565da8011a5bdd496b20c5396}
+      \strng{authorbibnamehash}{bf92eb7565da8011a5bdd496b20c5396}
+      \strng{authornamehash}{bf92eb7565da8011a5bdd496b20c5396}
+      \strng{authorfullhash}{bf92eb7565da8011a5bdd496b20c5396}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0165-1889}
+      \field{journaltitle}{Journal of Economic Dynamics and Control}
+      \field{number}{5}
+      \field{title}{The risk-free rate in heterogeneous-agent incomplete-insurance economies}
+      \field{volume}{17}
+      \field{year}{1993}
+      \field{pages}{953\bibrangedash 969}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1016/0165-1889(93)90024-M
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/016518899390024M
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/016518899390024M
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

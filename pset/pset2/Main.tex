@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+
+\usepackage{preamble}
+\usepackage{xgames}
+\usepackage{fikz}
+\addbibresource{references.bib}
+
+\graphicspath{{../figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{amsfonts, amsmath}
+\usepackage{amssymb, geometry}
+\usepackage{commath}
+\usepackage{comment}
+\usepackage{scalefnt}
+\usepackage{setspace}
+\usepackage{color,hyperref}
+%\usepackage{epsfig,subfigure,morefloats}
+\usepackage{dsfont}
+\usepackage{epstopdf}
+%\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs,siunitx}
+\usepackage{bm}
+\usepackage[section]{placeins}
+%\usepackage{hypcap}
+\usepackage{afterpage}
+\usepackage[makeroom]{cancel}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{subcaption} 
+\usepackage[toc,page]{appendix}
+\usepackage{tocloft}
+\usepackage{mathtools}
+
+
+\usepackage{mathpazo} % math & rm
+\linespread{1.15}        % Palatino needs more leading (space between lines)
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % tt
+\normalfont
+\usepackage[T1]{fontenc}
+\setcounter{tocdepth}{4}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\J}{\mathcal{J}}
+% \newcommand{\Pr}{\mathbb{P}}
+\newcommand{\thetahat}{\hat{\theta}}
+\newcommand{\Qhat}{\hat{\mathbb{Q}}}
+\newcommand{\logn}{\ell n}
+\newcommand{\iid}{\stackrel{\mathclap{iid}}{\sim}}
+\newcommand{\notimplies}{%
+\mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
+\newcommand{\WTS}{\colorbox{lightblue!20}{\textbf{WTS.}} }
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Var}{\mathrm{Var}}
+
+
+%\usepackage{bookman}
+%\usepackage{palatino}
+\usepackage{lmodern}
+%\usepackage{pifont}
+% \usepackage{pxfonts}
+%\usepackage{tgpagella}
+%\usepackage{utfsym}
+
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\crossmark}{\usym{2717}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+
+\usepackage[bottom]{footmisc} % Ensures footnotes appear at the bottom of the page
+
+\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\huge Fall25 ECON880 PSET2}
+\author{\Large Eric Hsienchen Chu\footnote{Department of Finance, Wisconsin School of Business. 
+\href{mailto:hchu38@wisc.edu}{hchu38@wisc.edu}. 
+This is PSET for ECON 880: Computational Methods in Fall 2025. 
+Instructors: Prof. Dean Corbae and Prof. Rasmus Lentz.}}
+
+\begin{document}
+\date{\Large Due: September 19, 2025}
+\maketitle
+\renewcommand{\cftdot}{.}
+
+%\listoftodos[Appendix]
+%\improvement[inline]{Todo.}
+
+%\tableofcontents
+\vspace{-4ex}
+%\newpage
+
+% ------ Section 1 ------%
+\section{Huggett (1993, JEDC)}
+\input{Section1hw}
+
+%\newpage
+
+% ------ Section 12 ------%
+\section{Endogeneous steady state wealth distribution}
+\input{Section2hw}
+
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%% end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+%\vspace{-2ex}
+\printbibliography
+
+
+
+\end{document}

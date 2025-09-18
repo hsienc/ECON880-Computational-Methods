@@ -1,0 +1,75 @@
+%%%%%%%%%%%%% Q1 %%%%%%%%%%%%%
+\begin{framedexercise}[Competitive EQM] Consider the same environment as \citet{Huggett1993-sn} except assume
+    that there are enforceable insurance markets regarding the idiosyncratic shocks
+    to earnings and that there are no initial asset holdings. Solve for a competitive
+    equilibrium. What are prices? What is the allocation? (Hint: think about the
+    planner’s problem and then decentralize)
+\end{framedexercise}
+
+\begin{solution} (I follow the notations in slides.) The environment is as follows:
+    \begin{itemize}
+        \item Population: unit measure of HH.
+        \item Preferences: $\E_0 \left[ \displaystyle\sum_{t=0}^{\infty} \beta^t U(c_t)\right]$,
+              where $U$ is continuously differentiable, strictly concave, and bounded.
+        \item Endowment: $s_t \in \mathcal{S} = \{e, u\}$ (earning shocks, which are i.i.d. across HH)
+              \begin{itemize}
+                  \item Earns $y^e = 1$ if employed; earns $y^u = 0.5$ if unemployed
+                  \item Markov employment process: $\mathcal{P} = \begin{bmatrix}
+                                \pi(e|e) & \pi(u|e) \\
+                                \pi(e|u) & \pi(u|u)
+                            \end{bmatrix} = \begin{bmatrix}
+                                {0.97} & 0.03  \\
+                                0.5    & {0.5}
+                            \end{bmatrix}$.\footnote{Use
+                            duration of unemployment data of 2 quarters and an average unemployment rate
+                            of 6$\%$}
+                  \item We can invariant dist by $\Pi \mathcal{P} = \Pi \implies \Pi = \left\{\pi_e, \pi_u\right\} = \left\{0.94, 0.06\right\}$
+              \end{itemize}
+        \item Asset: non-contingent bonds $a_t \in A$ with price of next-period bonds $q_t$ (for $a_{t+1}$); borrowing constraint $\underline{a} \leq 0$
+        \item Other: discount factor $\beta = 0.9932$; relative risk aversion $\alpha = 1.5$
+    \end{itemize} \textit{(Cont'd on next page!)}
+    \newpage
+
+    \par \noindent \colorbox{black!12}{\textbf{Planner's problem.}} SP maximizes the expected utility of the HH
+    by choosing consumption allocation $\{c_t^e, c_t^u\}_{t=0}^{\infty}$ subject to the resource constraint (RC):
+    \begin{eqnarray}
+        \max\limits_{\text{\scriptsize $\{c_t^e, c_t^u\}_{t=0}^{\infty}$}} & \displaystyle\sum_{t=0}^{\infty} \beta^t \left[ \underbrace{U(c_t^e) \pi_e}_{\text{\scriptsize EU employed}}
+            + \underbrace{U(c_t^u) \pi_u}_{\text{\scriptsize EU unemployed}} \right]
+        \text{ s.t. } \text{[RC] }\pi_e c_t^e + \pi_u c_t^u \leq \pi_e y^e + \pi_u y^u =: \mathbf{y} \\
+        & \implies \mathcal{L} =\displaystyle\sum_{t=0}^{\infty} \beta^t \left[ U(c_t^e) \pi_e + U(c_t^u) \pi_u
+            + \lambda_t \left[\mathbf{y} - \pi_e c_t^e - \pi_u c_t^u \right] \right]
+    \end{eqnarray} Then, we take FOCs:
+    \begin{eqnarray}
+        & [c_t^e]: & 0 = \beta^t \pi_e U'(c_t^e) - \lambda_t \pi_e  \\
+        & [c_t^u]: & 0 = \beta^t \pi_u U'(c_t^u) - \lambda_t \pi_u  \\
+        & & \implies U'(c_t^e) = U'(c_t^u) \implies c_t^e = c_t^u \\
+        & \xRightarrow{\text{\scriptsize plug in [RC]}} & \pi_e c_t^e + \pi_u c_t^e = c_t^e = \mathbf{y} = \underbrace{0.94 \times 1}_{\text{\scriptsize $\pi_e y^e$}}
+        + \underbrace{0.06 \times 0.5}_{\text{\scriptsize $\pi_u y^u$}} = 0.97 = c_t^u
+    \end{eqnarray}
+    So the SP allocation is \colorbox{black!12}{$c_t^e = c_t^u = \mathbf{c}^{sp} = 0.97$} for employed and unemployed HH $\forall t$. \qed \\[2pt]
+
+    %%%% Decentralized EQM
+    \par \noindent \colorbox{black!12}{\textbf{HH problem.}} In the decentralized economy, each HH chooses consumption
+    and non-contingent bonds $\{c, a'\}$ (recursive form) to solve:
+    \begin{eqnarray}
+        \max\limits_{\text{\scriptsize $c, a'$}} U(c) + \beta \displaystyle\sum_{s' \in \mathcal{S}} \pi(s'|s) U(a', s')
+        \text{ s.t. } c + qa' = y(s) + a \\
+        \implies \max\limits_{\text{\scriptsize $a'$}} U(y(s)+a-qa') + \beta \displaystyle\sum_{s' \in \mathcal{S}} \pi(s'|s) U(a', s')
+    \end{eqnarray} We take F.O.C.:
+    \begin{eqnarray}
+        & [a']: & 0 = -q U'(c) + \beta \displaystyle\sum_{s' \in \mathcal{S}} \pi(s'|s) U'(c') \cdot 1 \\
+        & \implies & q = \beta \displaystyle\sum_{s' \in \mathcal{S}} \pi(s'|s) \frac{U'(c')}{U'(c)} = \beta \E\left[\frac{U'(c')}{U'(c)} \middle| {s}\right]
+    \end{eqnarray} Note that, to have the same allocation as in SP problem,
+    we need $c = c' = \mathbf{c}^{sp} (= 0.97)$ $\forall s, s' \in \mathcal{S}$.
+    So the price of next-period bonds is pinned down: \begin{eqnarray}
+        q = \beta \E\left[\frac{U'(c')}{U'(c)} \middle| {s}\right] = \beta \frac{\bcancel{U'(\mathbf{c}^{sp})}}{\bcancel{U'(\mathbf{c}^{sp})}} = \beta = 0.9932
+    \end{eqnarray} Budget constraint for agents (employed/unemployed) has that:
+    \begin{eqnarray}
+        s = e: & c^e + a^e = y^e & \implies a^e = y^e - \mathbf{c}^{sp} = 1 - 0.97 = 0.03\ (>0: save)\\
+        s = u: & c^u + a^u = y^u & \implies a^u = y^u - \mathbf{c}^{sp} = 0.5 - 0.97 = -0.47\ (<0: borrow)
+    \end{eqnarray} Finally, we check market clearing condition for bonds: \begin{eqnarray}
+        a^e \pi_e + a^u \pi_u = 0.03 \times 0.94 + (-0.47) \times 0.06 = 0 \quad {\color{green} {\textbf{\checkmark}}}
+    \end{eqnarray} \qed
+\end{solution}
+
+
