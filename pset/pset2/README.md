@@ -1,8 +1,8 @@
-I work on this pset1 on my own. The folder contains necessary materials:
+I work on this pset2 on my own. The folder contains necessary materials:
 
-1. parallel_stochastic_growth_functions.jl: a modified version from parallel_functions.jl on Dean's website. Add technology shocks into loops.
+1. `pset2_functions.jl`: calculate moments needed in this pset
 
-2. parallel_stochastic_growth_script.jl: this runs the above .jl and generates 3 png files
+2. `pset2_script.jl`: this runs the above .jl and generates 5 png files
 
 3. Main.pdf: write-up  
 
